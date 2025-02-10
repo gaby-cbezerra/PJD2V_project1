@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     private Rigidbody2D _rigidbody2D;
     
     public float velocidade = 10f;
-    public float forcaPulo = 10f;
+    public float forcaPulo = 3f;
 
     private bool noChao = false;
     
