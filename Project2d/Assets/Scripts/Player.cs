@@ -12,7 +12,6 @@ public class Player : MonoBehaviour
     public float forcaPulo = 3f;
 
     private bool noChao = false;
-    
     void Start()
     {
         _transform = gameObject.transform;
@@ -45,12 +44,14 @@ public class Player : MonoBehaviour
         if(Input.GetKey(KeyCode.LeftArrow))
         {
             _transform.position -= new Vector3(velocidade*Time.deltaTime,0,0);
+            _transform.rotation = Quaternion.Euler(0, 0, 0);
            Debug.Log("LeftArrow");
         }
 
         if(Input.GetKey(KeyCode.RightArrow))
         {
            _transform.position += new Vector3(velocidade*Time.deltaTime,0,0);
+           _transform.rotation = Quaternion.Euler(0, 180, 0);
            Debug.Log("RightArrow");
         }
 
@@ -59,5 +60,6 @@ public class Player : MonoBehaviour
            // forcaPulo
            _rigidbody2D.AddForce(new Vector2(0,forcaPulo),ForceMode2D.Impulse);
         }
+
     }
 }
